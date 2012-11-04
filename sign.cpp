@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	rc = Crypt_Sign(argv[1], -1, temp, sizeof(temp), &key);
+	printf("0\n");
 	printf("%s", temp);
 	Crypt_Done();
 
