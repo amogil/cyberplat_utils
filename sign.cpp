@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "libipriv.h"
 
-int eng=IPRIV_ENGINE_RSAREF;
+int eng = IPRIV_ENGINE_RSAREF;
 
 int main(int argc, char *argv[]) {
 
@@ -10,8 +10,7 @@ int main(int argc, char *argv[]) {
 	char temp[1024];
 
 	if (argc < 3) {
-		printf("-1\n");
-		printf("Wrong input parameters\n");
+		printf("-1\nWrong input parameters\n");
 		return -1;
 	}
 
@@ -21,28 +20,23 @@ int main(int argc, char *argv[]) {
 
 	if (rc < 0) {
 		if (rc == CRYPT_ERR_INVALID_KEY) {
-			printf("%d\n", rc);
-			printf("Ключ не может быть использован\n");
+			printf("%d\nКлюч не может быть использован\n", rc);
 			return rc;
 		}
 		if (rc == CRYPT_ERR_FILE_NOT_FOUND) {
-			printf("%d\n", rc);
-			printf("Файл закрытого ключа не найден (%s)\n", argv[2]);
+			printf("%d\nФайл закрытого ключа не найден (%s)\n", rc, argv[2]);
 			return rc;
 		}
 		if (rc == CRYPT_ERR_INVALID_PASSWD) {
-			printf("%d\n", rc);
-			printf("Неверная кодовая фраза закрытого ключа\n");
+			printf("%d\nНеверная кодовая фраза закрытого ключа\n", rc);
 			return rc;
 		}
-		printf("%d\n", rc);
-		printf("Error code %d\n", rc);
+		printf("%d\nError code %d\n", rc, rc);
 		return rc;
 	}
 
 	rc = Crypt_Sign(argv[1], -1, temp, sizeof(temp), &key);
-	printf("0\n");
-	printf("%s", temp);
+	printf("0\n%s", temp);
 	Crypt_Done();
 
 	return 0;
