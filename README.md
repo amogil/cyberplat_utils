@@ -1,6 +1,6 @@
 # CyberPlat CIPF usage example
 
-Ceberplat liberies http://www.cyberplat.ru/download/api.zip
+Ceberplat libraries http://www.cyberplat.ru/download/api.zip
 
 ## Compiling
 
