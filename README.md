@@ -12,7 +12,7 @@ Signing message
 
     ./sign [message] [path to secret key] [secret key pass]
     
-Verifying message mign
+Verifying signed message
 
     ./verify [signed message] [path to CA key] [path to public key] [public key serial]
 
